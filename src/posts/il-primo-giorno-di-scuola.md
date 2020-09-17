@@ -2,7 +2,7 @@
 title: Il primo giorno di scuola
 lang: it
 date: '2020-09-17'
-socialImage: 'images/Andrea-Portrait-White.jpg'
+socialImage: '/images/Andrea-Portrait-White.jpg'
 metaDesc: Pensieri alla vigilia del primo giorno di scuola di Ida
 tags:
   - personal

@@ -1,7 +1,7 @@
 ---
 title: Going indie
 date: '2020-03-06'
-socialImage: 'images/Andrea-Portrait-White.jpg'
+socialImage: '/images/Andrea-Portrait-White.jpg'
 metaDesc: Going indie! or Let's make the web fun again!
 tags:
   - blog
