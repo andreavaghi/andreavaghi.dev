@@ -18,6 +18,11 @@
       {% include "partials/components/intro.njk" %}
       <div class="[ post__body ] [ inner-wrapper ] [ leading-loose pad-top-900 {{ 'pad-bottom-900' if not site.enableThirdPartyComments }} text-500 ] [ sf-flow ] [ e-content ]">
         {{ content | safe }}
+        <section>
+          <h2>Webmentions</h2>
+          {% set webmentionUrl %}{{ page.url | url | absoluteUrl(site.url )}}{% endset %}
+          {% include 'webmentions.njk' %}
+        </section>
       </div>
       {% if site.enableThirdPartyComments %}
         <hr />
