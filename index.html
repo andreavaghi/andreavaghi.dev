@@ -5,18 +5,146 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Andrea Vaghi, personal website</title>
+  <meta name="description" content="The personal website of Andrea Vaghi: music nerd, curious by nature, web developer by accident.">
+  <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css" integrity="sha384-rCvl++5jppxDyN8NigsVGLX/CRx1NZiKkgIn+PBJfFpIP8xPB77hWVxS7/JGxs62" crossorigin="anonymous" />
+  <style>
+    :root {
+      --size-300: 0.75rem;
+      --size-400: 1rem;
+      --size-500: 1.33rem;
+      --size-600: 1.77rem;
+      --size-700: 2.36rem;
+      --size-800: 3.15rem;
+      --size-900: 4.2rem;
+    }
+
+    body {
+      background: #f3f3f3;
+      color: #252525;
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      padding: 2rem 0;
+    }
+
+    a:not([class]) {
+      color: currentColor;
+    }
+
+    :focus {
+      outline: 2px dashed;
+      outline-offset: 0.25rem;
+    }
+
+    main:focus {
+      outline: none;
+    }
+
+    [href]:hover {
+      text-decoration: none;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue,
+        helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+      line-height: 1.3;
+    }
+
+    h1,
+    h2 {
+      font-weight: 900;
+    }
+
+    h1 {
+      font-size: var(--size-700);
+    }
+
+    h2 {
+      font-size: var(--size-600);
+    }
+
+    h3 {
+      font-size: var(--size-600);
+    }
+
+    ::selection {
+      color: #fff;
+      background: rgba(0, 0, 0, 0.99);
+    }
+
+    .flow > * + * {
+      margin-top: var(--flow-space, 1em);
+    }
+
+    p,
+    li {
+      max-width: 60ch;
+    }
+
+    h1 {
+      max-width: 15ch;
+    }
+
+    h2,
+    h3 {
+      max-width: 25ch;
+    }
+
+    .post {
+      --flow-space: var(--size-700);
+
+      width: 90vw;
+      width: clamp(16rem, 90vw, 70rem);
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    .post :is(h2, h3) {
+      --flow-space: var(--size-900);
+    }
+
+    .post :is(h2, h3) + * {
+      --flow-space: var(--size-400);
+    }
+
+    @media (min-width: 45em) {
+      h1 {
+        font-size: var(--size-900);
+      }
+
+      h2 {
+        font-size: var(--size-700);
+      }
+
+      p, li {
+        font-size: var(--size-500);
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>👋, welcome to my place on the web!</h1>
-  <p>Doesn't it sounds like something from the 90s? - "Welcome to <em>my space</em>!"</p>
-  <p>The fact is that the most I work as a web developer, the most I want to run away from the enterprise way to do things and follow the principles of the <a href="https://indieweb.org/">Indie Web.</a></p>
-  <p>I wanted to extensively use <a href="https://11ty.dev">11ty</a> and I will use this website to do it, but the content will focus on the things I love the most.</p>
-  <p>The main reason of doing this project is to take back control on most of the things I've left around the web and learn new stuff doing it. I'll keep everything in the open so that I can keep track on the improvements. I envy a lot websites that are a little treasure box of the life and thoughts of their owner, my absolute favourite is Jeremy Keith's <a href="https://adactio.com">adactio.com</a></p>
-  <h2>Todo list (to remind me what sections I planned to include in the website)</h2>
-  <ul>
-    <li>Concerts I have attended, taking data from <a href="https://www.setlist.fm/user/urbando">setlist.fm</a></li>
-    <li>Music collection, taking data from <a href="https://www.discogs.com/it/user/andrea.vaghi/collection">discogs.com</a></li>
-    <li>Keep track of listenings on Spotify, similar to what last.fm do. This can be tricky but I would really like to collect all the data of almost 8 years of listenings.</li>
-  </ul>
+  <article class="[ post ] [ flow ]">
+    <h1>👋 welcome to my place on the web!</h1>
+    <p>Doesn't it sounds like something from the 90s? - "Welcome to <em>my space</em>!"</p>
+    <p>The fact is that the most I work as a web developer, the most I want to run away from the enterprise way to do things and follow the principles of the <a href="https://indieweb.org/">Indie Web.</a></p>
+    <p>I wanted to extensively use <a href="https://11ty.dev">11ty</a> and I will use this website to do it, but the content will focus on the things I love the most.</p>
+    <p>The main reason of doing this project is to take back control on most of the things I've left around the web and learn new stuff doing it. I'll keep everything in the open so that I can keep track on the improvements. I envy a lot websites that are a little treasure box of the life and thoughts of their owner, my absolute favourite is Jeremy Keith's <a href="https://adactio.com">adactio.com</a></p>
+    <h2>Todo list (to remind me what sections I planned to include in the website)</h2>
+    <ul class="[ flow ]">
+      <li>Concerts I have attended, taking data from <a href="https://www.setlist.fm/user/urbando">setlist.fm</a>.</li>
+      <li>Music collection, taking data from <a href="https://www.discogs.com/it/user/andrea.vaghi/collection">discogs.com</a>.</li>
+      <li>Keep track of listenings on Spotify, similar to what last.fm do. This can be tricky but I would really like to collect all the data of almost 8 years of listenings.</li>
+    </ul>
+    <h2>Updates</h2>
+    <ul class="[ flow ]">
+      <li>
+        <time datetime="2021-09-14"><em>14th September, 2021</em></time> - Add basic styling, based on the <a href="https://piccalil.li/tutorial/improve-the-readability-of-the-content-on-your-website/">“Improve the readability of the content on your website”</a> tutorial by Andy Bell.  
+      </li>
+    </ul>
+  </article>
 </body>
 </html>

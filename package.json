@@ -4,6 +4,7 @@
   "description": "Personal website on https://andreavaghi.dev",
   "main": "index.js",
   "scripts": {
+    "serve": "npx eleventy --serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
