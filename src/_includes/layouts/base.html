@@ -113,6 +113,10 @@
       --flow-space: var(--size-400);
     }
 
+    .post li + li {
+      margin-top: var(--size-300);
+    }
+
     @media (min-width: 45em) {
       h1 {
         font-size: var(--size-900);
@@ -129,24 +133,6 @@
   </style>
 </head>
 <body>
-  <article class="[ post ] [ flow ]">
-    <h1>👋 welcome to my place on the web!</h1>
-    <p>Doesn't it sounds like something from the 90s? - "Welcome to <em>my space</em>!"</p>
-    <p>The fact is that the most I work as a web developer, the most I want to run away from the enterprise way to do things and follow the principles of the <a href="https://indieweb.org/">Indie Web.</a></p>
-    <p>I wanted to extensively use <a href="https://11ty.dev">11ty</a> and I will use this website to do it, but the content will focus on the things I love the most.</p>
-    <p>The main reason of doing this project is to take back control on most of the things I've left around the web and learn new stuff doing it. I'll keep everything in the open so that I can keep track on the improvements. I envy a lot websites that are a little treasure box of the life and thoughts of their owner, my absolute favourite is Jeremy Keith's <a href="https://adactio.com">adactio.com</a></p>
-    <h2>Todo list (to remind me what sections I planned to include in the website)</h2>
-    <ul class="[ flow ]">
-      <li>Concerts I have attended, taking data from <a href="https://www.setlist.fm/user/urbando">setlist.fm</a>.</li>
-      <li>Music collection, taking data from <a href="https://www.discogs.com/it/user/andrea.vaghi/collection">discogs.com</a>.</li>
-      <li>Keep track of listenings on Spotify, similar to what last.fm do. This can be tricky but I would really like to collect all the data of almost 8 years of listenings.</li>
-    </ul>
-    <h2>Updates</h2>
-    <ul class="[ flow ]">
-      <li>
-        <time datetime="2021-09-14"><em>14th September, 2021</em></time> - Add basic styling, based on the <a href="https://piccalil.li/tutorial/improve-the-readability-of-the-content-on-your-website/">“Improve the readability of the content on your website”</a> tutorial by Andy Bell.  
-      </li>
-    </ul>
-  </article>
+  {% block content %}{% endblock %}
 </body>
 </html>
