@@ -1,0 +1,18 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+  {% if setlists.length %}
+  <article class="[ post ]">
+    <div class="[ flow ]">
+      <h1>{{ title }}</h1>
+      <ul>
+        {% for setlist in setlists %}
+        <li>
+          {{ setlist.artist.name }} - <a href="/setlists/{{ setlist.artist.name | slug }}-{{ setlist.eventDate | slug }}/">View Setlist</a> - <a href="{{ setlist.url }}">View Original Setlist</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </article>
+  {% endif %}
+{% endblock %}

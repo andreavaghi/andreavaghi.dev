@@ -1,18 +1,24 @@
 {% extends "layouts/base.html" %}
 
 {% block content %}
-  {% if setlist.length %}
   <article class="[ post ]">
     <div class="[ flow ]">
       <h1>{{ title }}</h1>
+      <a href="/setlists">Back to list</a>
       <ul>
-        {% for item in setlist %}
+      {% for set in setlist.sets.set %}
+        {% if set.encore %}
         <li>
-          {{ item.artist.name }} - <a href="{{ item.url }}">{{ item.url }}</a>
+          Encore {{ set.encore }}
+        </li>
+        {% endif %}
+        {% for song in set.song %}
+        <li>
+          {{ song.name }}
         </li>
         {% endfor %}
+      {% endfor %}
       </ul>
     </div>
   </article>
-  {% endif %}
 {% endblock %}
