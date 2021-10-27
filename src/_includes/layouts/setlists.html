@@ -1,17 +1,29 @@
 {% extends "layouts/base.html" %}
 
 {% block content %}
-  {% if setlists.length %}
+  {% if pagination.items.length %}
   <article class="[ post ]">
     <div class="[ flow ]">
       <h1>{{ title }}</h1>
       <ul>
-        {% for setlist in setlists %}
+        {% for setlist in pagination.items %}
         <li>
           {{ setlist.artist.name }} - <a href="/setlists/{{ setlist.artist.name | slug }}-{{ setlist.eventDate | slug }}/">View Setlist</a> - <a href="{{ setlist.url }}">View Original Setlist</a>
         </li>
         {% endfor %}
       </ul>
+      <nav aria-labelledby="setlist-pagination">
+      <h2 id="setlist-pagination">Navigate setlists</h2>
+      <ol>
+        <li>{% if page.url != pagination.href.first %}<a href="{{ pagination.href.first }}">First</a>{% else %}First{% endif %}</li>
+        <li>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}Previous{% endif %}</li>
+        {%- for pageEntry in pagination.pages %}
+        <li><a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>Page {{ loop.index }}</a></li>
+        {%- endfor %}
+        <li>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}Next{% endif %}</li>
+        <li>{% if page.url != pagination.href.last %}<a href="{{ pagination.href.last }}">Last</a>{% else %}Last{% endif %}</li>
+      </ol>
+    </nav>
     </div>
   </article>
   {% endif %}
