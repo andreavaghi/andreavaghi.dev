@@ -38,7 +38,7 @@ async function getSetlists(page = 1) {
     }
   );
 
-  sleep(2000);
+  await sleep(500);
 
   if (parseInt(response.total / response.itemsPerPage) >= page) {
     return response.setlist.concat(await getSetlists(page + 1));
