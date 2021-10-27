@@ -13,10 +13,11 @@ The main reason of doing this project is to take back control on most of the thi
 
 ## Todo list (to remind me what sections I planned to include in the website)
 
-- Concerts I have attended, taking data from [setlist.fm](https://www.setlist.fm/user/urbando).
+- Concerts I have attended, taking data from [setlist.fm](https://www.setlist.fm/user/urbando). (Take a sneak peek at the [work in progress](/setlists/)!) 
 - Music collection, taking data from [discogs.com](https://www.discogs.com/it/user/andrea.vaghi/collection).
 - Keep track of listenings on Spotify, similar to what last.fm do. This can be tricky but I would really like to collect all the data of almost 8 years of listenings.
 
 ## Updates
 
+- <time datetime="2021-10-27">_27th October, 2021_</time> - Initial draft of the setlist.fm [personal archive](/setlists/).
 - <time datetime="2021-09-14">_14th September, 2021_</time> - Add basic styling, based on the [“Improve the readability of the content on your website”](https://piccalil.li/tutorial/improve-the-readability-of-the-content-on-your-website/) tutorial by Andy Bell.  
