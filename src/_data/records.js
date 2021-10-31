@@ -38,7 +38,7 @@ async function getRecords(page = 1, itemsPerPage = 50) {
     }
   );
 
-  await sleep(500);
+  await sleep(process.env.DISCOGS_API_SLEEP || 500);
 
   if (parseInt(response.pagination.items / response.pagination.per_page) >= page) {
     return response.releases.concat(await getRecords(page + 1));
