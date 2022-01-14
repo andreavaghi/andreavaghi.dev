@@ -1,0 +1,35 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+  {% if pagination.items.length %}
+  <article class="[ post ]">
+    <div class="[ flow ]">
+      <h1>{{ title }}</h1>
+      <ul class="grid-list">
+        {% for artist in pagination.items %}
+        <li>
+          {% if artist.images[0] %}
+          <img width={{ artist.images[0].width }} height={{ artist.images[0].height }} src={{ artist.images[0].url }} alt="" />
+          {% endif %}
+          {{ artist.name }} - <a href="{{ artist.external_urls.spotify }}">View Artist</a>
+        </li>
+        {% endfor %}
+      </ul>
+      {% if pagination.pages > 1 %}
+      <nav aria-labelledby="setlist-pagination">
+      <h2 id="setlist-pagination">Navigate Top Artists</h2>
+        <ol>
+          <li>{% if page.url != pagination.href.first %}<a href="{{ pagination.href.first }}">First</a>{% else %}First{% endif %}</li>
+          <li>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}Previous{% endif %}</li>
+          {%- for pageEntry in pagination.pages %}
+          <li><a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>Page {{ loop.index }}</a></li>
+          {%- endfor %}
+          <li>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}Next{% endif %}</li>
+          <li>{% if page.url != pagination.href.last %}<a href="{{ pagination.href.last }}">Last</a>{% else %}Last{% endif %}</li>
+        </ol>
+      </nav>
+      {% endif %}
+    </div>
+  </article>
+  {% endif %}
+{% endblock %}
