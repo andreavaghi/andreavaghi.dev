@@ -144,6 +144,23 @@
         font-size: var(--size-500);
       }
     }
+
+    .grid-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+      grid-gap: var(--size-700);
+      list-style: none;
+      padding: 0;
+    }
+
+    .grid-list li + li {
+      margin-top: 0;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
   </style>
 </head>
 <body>
