@@ -1,4 +1,4 @@
-const Cache = require('@11ty/eleventy-cache-assets');
+import Fetch from '@11ty/eleventy-fetch';
 
 /**
  * Grabs the remote data for studio images and returns back
@@ -6,7 +6,7 @@ const Cache = require('@11ty/eleventy-cache-assets');
  *
  * @returns {Array} Empty or array of objects
  */
-module.exports = async () => {
+export default async () => {
   try {
     // Grabs either the fresh remote data or cached data (will always be fresh live)
     const records = await getRecords();
@@ -24,7 +24,7 @@ module.exports = async () => {
 async function getRecords(page = 1, itemsPerPage = 50) {
   const url = `https://api.discogs.com/users/andrea.vaghi/collection/folders/0/releases?page=${page}&per_page=${itemsPerPage}`
 
-  const response = await Cache(
+  const response = await Fetch(
     url,
     {
       duration: '1d',

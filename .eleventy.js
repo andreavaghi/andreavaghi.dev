@@ -1,13 +1,10 @@
-require('dotenv').config();
+import 'dotenv/config';
 
-module.exports = config => {
-  return {
-    markdownTemplateEngine: 'njk',
-    dataTemplateEngine: 'njk',
-    htmlTemplateEngine: 'njk',
-    dir: {
-      input: 'src',
-      output: 'dist'
-    }
-  };
+export const config = {
+  markdownTemplateEngine: 'njk',
+  htmlTemplateEngine: 'njk',
+  dir: {
+    input: 'src',
+    output: 'dist'
+  }
 };

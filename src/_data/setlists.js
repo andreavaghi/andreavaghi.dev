@@ -1,4 +1,4 @@
-const Cache = require('@11ty/eleventy-cache-assets');
+import Fetch from '@11ty/eleventy-fetch';
 
 /**
  * Grabs the remote data for studio images and returns back
@@ -6,7 +6,7 @@ const Cache = require('@11ty/eleventy-cache-assets');
  *
  * @returns {Array} Empty or array of objects
  */
-module.exports = async () => {
+export default async () => {
   try {
     // Grabs either the fresh remote data or cached data (will always be fresh live)
     const setlists = await getSetlists();
@@ -24,7 +24,7 @@ module.exports = async () => {
 async function getSetlists(page = 1) {
   const url = `https://api.setlist.fm/rest/1.0/user/urbando/attended?p=${page}`
 
-  const response = await Cache(
+  const response = await Fetch(
     url,
     {
       duration: '1d',
